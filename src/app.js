@@ -4,9 +4,24 @@ const express= require("express");
 
 const app=express();
 
+//this will handle get call to /user
+app.get("/user",(req,res)=>{
+    res.send("hello frm the user");
+})
+
+app.post("/user",(req,res)=>{
+    res.send("successfully send to the database");
+})
+
+app.delete("/user",(req,res)=>{
+    res.send("deleted successfully");
+})
+
+
 app.use("/test",(req,res)=>{
     res.send("Hello from the server-test");
 })
+
 
 app.use("/",(req,res)=>{
     res.send("Hello from the server seervere");
